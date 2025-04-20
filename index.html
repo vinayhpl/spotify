@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Live Vibe Room</title>
+  <!-- Favicon: Spotify Primary Logo (Green) -->
+  <link rel="icon" href="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Green.png">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header with official Spotify Full Logo -->
+ <!-- <header class="app-header">
+    <img
+      src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Full_Logo_RGB_Green.png"
+      alt="Spotify Logo"
+      class="spotify-logo"
+    >
+  </header> -->
+
+  <header class="app-header">
+  <a href="https://spotify.clouddays.me/" target="_blank" rel="noopener noreferrer">
+    <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Full_Logo_RGB_Green.png" alt="Spotify Logo" class="spotify-logo">
+  </a>
+</header>
+
+
+  <div class="vibe-room">
+    <div class="container">
+      <!-- Now Playing Section -->
+      <div class="song-info">
+        <h2>Now Playing</h2>
+        <div class="album-container">
+          <div class="playing-indicator" id="playing-indicator"></div>
+          <img
+            id="album-art"
+            class="album-art"
+            src="https://i.scdn.co/image/ab67616d0000b273d4c5b3e0b73db0b6785a9bde"
+            alt="Levitating Album Art"
+          >
+        </div>
+        <h3 id="song-title">Levitating – Dua Lipa</h3>
+        
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+          </div>
+          <span class="song-timer" id="song-timer">00:00</span>
+        </div>
+        
+        <div class="song-actions">
+          <button id="play-pause">Play</button>
+        </div>
+
+        <!-- Song interaction buttons -->
+        <div class="song-interactions">
+          <button id="like-btn" title="Like">
+            <i class="far fa-heart"></i>
+          </button>
+          <button id="shuffle-btn" title="Shuffle">
+            <i class="fas fa-random"></i>
+          </button>
+          <button id="repeat-btn" title="Repeat">
+            <i class="fas fa-redo"></i>
+          </button>
+        </div>
+        
+        <div class="volume-control">
+          <span class="volume-icon">🔊</span>
+          <input type="range" min="0" max="100" value="80" class="volume-slider" id="volume-slider">
+        </div>
+      </div>
+    
+      <!-- Playlist -->
+      <div class="playlist">
+        <h3>Your Playlist</h3>
+        <div
+          class="playlist-item active"
+          data-title="Levitating – Dua Lipa"
+          data-image="https://spotify.clouddays.me/img/levitating.png"
+          data-audio="https://spotify.clouddays.me/mp3/levitating.mp3"
+          data-duration="210"
+        >
+          <span class="track-number">1</span>
+          Levitating – Dua Lipa
+        </div>
+        <div
+          class="playlist-item"
+          data-title="One Kiss – Calvin Harris & Dua Lipa"
+          data-image="https://spotify.clouddays.me/img/One_Kiss.jpg"
+          data-audio="https://spotify.clouddays.me/mp3/One_Kiss.mp3"
+          data-duration="180"
+        >
+          <span class="track-number">2</span>
+          One Kiss – Calvin Harris & Dua Lipa
+        </div>
+        <div
+          class="playlist-item"
+          data-title="I Wanna Be Yours – Arctic Monkeys"
+          data-image="https://spotify.clouddays.me/img/I_Wanna_Be_Yours_Arctic_Monkeys.jpg"
+          data-audio="https://spotify.clouddays.me/mp3/I_Wanna_Be_Yours.mp3"
+          data-duration="240"
+        >
+          <span class="track-number">3</span>
+          I Wanna Be Yours – Arctic Monkeys
+        </div>
+        <div
+          class="playlist-item"
+          data-title="Blinding Lights – The Weeknd"
+          data-image="https://spotify.clouddays.me/img/Blinding%20Lights%20%E2%80%93_The_Weeknd.jpg"
+          data-audio="https://spotify.clouddays.me/mp3/Blinding%20Lights.mp3"
+          data-duration="200"
+        >
+          <span class="track-number">4</span>
+          Blinding Lights – The Weeknd
+        </div>
+        <div
+          class="playlist-item"
+          data-title="Heat Waves – Glass Animals"
+          data-image="https://spotify.clouddays.me/img/Heat_Waves_Glass_Animals.jpg"
+          data-audio="https://spotify.clouddays.me/mp3//Heat_Waves.mp3"
+          data-duration="190"
+        >
+          <span class="track-number">5</span>
+          Heat Waves – Glass Animals
+        </div>
+      </div>
+    </div>
+
+    <!-- Reactions -->
+    <div class="reaction-box">
+      <h3>React to the Track</h3>
+      <div class="emoji-buttons">
+        <button class="emoji" data-emoji="🔥">🔥</button>
+        <button class="emoji" data-emoji="💔">💔</button>
+        <button class="emoji" data-emoji="🎧">🎧</button>
+        <button class="emoji" data-emoji="🌙">🌙</button>
+        <button class="emoji" data-emoji="💃">💃</button>
+        <button class="emoji" data-emoji="👏">👏</button>
+      </div>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-box">
+      <h3>Live Chat</h3>
+      <div class="chat-area" id="chat-area">
+        <p>Welcome to the Live Vibe Room! Share your thoughts about the music.</p>
+      </div>
+      <div class="input-group">
+        <input type="text" id="chat-input" placeholder="Type a message…">
+        <button id="send-message">Send</button>
+      </div>
+    </div>
+
+    <!-- Fake Users -->
+    <div class="user-list">
+      <div class="user-profile">
+        <img
+          src="https://randomuser.me/api/portraits/men/32.jpg"
+          alt="Rocky"
+        >
+        <span>Rocky</span>
+      </div>
+      <div class="user-profile">
+        <img
+          src="https://randomuser.me/api/portraits/men/44.jpg"
+          alt="Bobby"
+        >
+        <span>Bobby</span>
+      </div>
+      <div class="user-profile">
+        <img
+          src="https://randomuser.me/api/portraits/women/65.jpg"
+          alt="Kiara"
+        >
+        <span>Kiara</span>
+      </div>
+      <div class="user-profile">
+        <img
+          src="https://i.scdn.co/image/ab6761610000e5ebb5f9e28219c169fd4b9e8379"
+          alt="Ajay"
+        >
+        <span>Ajay</span>
+      </div>
+      <div class="user-profile">
+        <img
+          src="https://i.scdn.co/image/ab6761610000e5eb8ae7f2aaa9817a704a87ea36"
+          alt="Mouna"
+        >
+        <span>Mouna</span>
+      </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <button id="toggle-theme">Switch to Light Mode</button>
+    </div>
+  </div>
+
+  <!-- Footer with "Powered by Spotify" -->
+  <footer>
+    Powered by Om Prakash
+    <img
+      src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_White.png"
+      alt="Spotify Logo"
+    >
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
